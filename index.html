@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Markdown Converter</title>
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF to Markdown Converter</h1>
+        <form id="upload-form">
+            <label for="file-input">Select PDF File:</label>
+            <input type="file" id="file-input" accept=".pdf" required>
+            <button type="submit" id="convert-btn">Convert</button>
+        </form>
+        <div id="editor-container">
+            <h2>Markdown Editor (Diagnostics Mode)</h2>
+            <textarea id="editor"></textarea>
+        </div>
+        <div id="download-section">
+            <a id="download-link" href="#" download style="display: none;">Download Markdown</a>
+        </div>
+    </div>
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
